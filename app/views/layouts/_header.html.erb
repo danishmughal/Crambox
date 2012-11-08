@@ -1,6 +1,6 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
-    <div class="container">
+    <div class="container-fluid">
       <a class="brand" href="/">CampusLink</a>
       <nav>
         <ul class="nav pull-left">
@@ -8,6 +8,35 @@
           <li><%= link_to "About",    '/about' %></li>
           <li><%= link_to "Contact", '/contact' %></li>
         </ul>
+      </nav>
+          <% if user_signed_in? %>
+
+
+            <ul class="nav pull-right">
+              <li><%= link_to current_user.email %></li>
+              <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+            </ul>
+
+
+          <% else %>
+
+          <!--
+            <form class="navbar-form pull-right">
+              <input type="text" class="span2" placeholder="Email">
+              <input type="text" class="span2" placeholder="Password">
+
+              <button type="submit" class="btn">Login</button>
+            </form>
+          -->
+            <%= form_for("user", :url => user_session_path, :html => { :class => "navbar-form pull-right"}) do |f| %>
+              <%= f.text_field :email, :placeholder => "Email" %>
+              <%= f.password_field :password, :placeholder => "Password" %>
+              <%= f.submit 'Login', :class => "btn" %>
+            <% end %>
+          <% end %>
+
+
+
       </nav>
     </div>
   </div>

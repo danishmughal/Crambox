@@ -5,8 +5,40 @@
   	CampusLink is built to help you, a college student, to other students on campus. Finding a class difficult? Big test coming up and you have no idea how to study for it? CampusLink will match you up with people in your classes and let you get that A you crave.
   	<br />
   	<br />
-    <a class="btn btn-primary btn-large">
-      Sign up!
-    </a>
+
+    <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-large">Sign Up!</button>
+
   </p>
+</div>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Sign up for CampusLink!</h3>
+  </div>
+  <div class="modal-body">
+    <p>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn pull-left" data-dismiss="modal" aria-hidden="true">Close</button>
+    <%= f.submit "Sign up", :class=> "btn btn-primary" %>
+    <% end %>
+
+  </div>
 </div>

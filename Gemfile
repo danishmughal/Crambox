@@ -27,7 +27,7 @@ gem 'jquery-rails'
 
 #Custom gems below, added after the default gems! during dev.
 gem 'bootstrap-sass', '2.0.4'
-
+gem 'devise'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
