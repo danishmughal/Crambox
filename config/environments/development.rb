@@ -38,4 +38,17 @@ CampusLink::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+  #Settings for the emailer
+  #Set specifically when setting up devise email auth.
+  config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :enable_starttls_auto => true,
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => "localhost:3000",
+      :authentication => :login,
+      :user_name => "campuslinkmail@gmail.com",
+      :password => "Demo1234"
+    }
+
 end
