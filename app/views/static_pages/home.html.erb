@@ -6,14 +6,33 @@
   	<br />
   	<br />
 
+<!--
     <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-large">Sign Up!</button>
+-->
 
   </p>
-</div>
 
+<% if !current_user %>
+  <h3>Register now!</h3>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
+    <div><%= f.label :email %>
+    <%= f.email_field :email %></div>
 
-<!-- Modal -->
+    <div><%= f.label :password %>
+    <%= f.password_field :password %></div>
+
+    <div><%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %></div>
+    <%= f.submit "Sign up!", :class=> "btn btn-primary" %>
+  <% end %>
+<% else %>
+  -signed in already, can't sign up- 
+<% end %>
+
+<!-- Modal
+
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -42,3 +61,4 @@
 
   </div>
 </div>
+-->

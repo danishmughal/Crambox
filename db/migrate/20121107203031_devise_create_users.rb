@@ -22,7 +22,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       #Custom additions
       #t.string :first_name, :null => false
       #t.string :last_name, :null => false
-
+      t.boolean :set_up, :default => false
 
       ## Confirmable
       t.string   :confirmation_token
