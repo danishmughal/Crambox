@@ -23,6 +23,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       #t.string :first_name, :null => false
       #t.string :last_name, :null => false
       t.boolean :set_up, :default => false
+      t.integer :current_schedule
 
       ## Confirmable
       t.string   :confirmation_token

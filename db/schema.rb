@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121107203031) do
+ActiveRecord::Schema.define(:version => 20121129041328) do
+
+  create_table "enrolled_courses", :force => true do |t|
+    t.string   "subjectcode"
+    t.integer  "classcode"
+    t.integer  "schedule_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "schedules", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "semester"
+    t.string   "year"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
@@ -25,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20121107203031) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "set_up",                 :default => false
+    t.integer  "current_schedule"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

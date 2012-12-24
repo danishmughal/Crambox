@@ -2,5 +2,13 @@
 Just fill out the information below to get started. <br />
 In order to find people in your classes, you're going to have to tell us what classes you're in! <br /> <br />
 
-Now you have to create your schedule!
-Type in the classes that you are currently taking right now. If it's winter break, type in the classes that you will be taking next semester! 
+<% if !current_user.current_schedule? %>
+
+	Now you have to create your schedule!
+	Type in the classes that you are currently taking right now. If it's winter break, type in the classes that you will be taking next semester! 
+
+<% else %>
+	
+	You already have a schedule on this account for some reason.
+
+<% end %>
