@@ -1,13 +1,29 @@
-<header class="navbar navbar-fixed-top">
+<header class="navbar">
   <div class="navbar-inner">
     <div class="container-fluid">
       <a class="brand" href="/">Crambox</a>
       <nav>
         <div class="navlinks">
           <ul class="nav pull-left">
-            <li><%= link_to "Home",    '/' %></li>
-            <li><%= link_to "About",    '/about' %></li>
-            <li><%= link_to "Contact", '/contact' %></li>
+
+
+            <% if request.path == '/' %>
+              <li id="activelink"><%= link_to "Home",    '/' %></li>
+            <% else %>
+              <li><%= link_to "Home",    '/' %></li>
+            <% end %>
+            
+            <% if request.path == '/about' %>
+              <li id="activelink"><%= link_to "About",    '/about' %></li>
+            <% else %>
+              <li><%= link_to "About",    '/about' %></li>
+            <% end %>
+
+            <% if request.path == '/contact' %>
+              <li id="activelink"><%= link_to "Contact", '/contact' %></li>
+            <% else %>
+              <li><%= link_to "Contact", '/contact' %></li>
+            <% end %>
           </ul>
         </div>
       </nav>
