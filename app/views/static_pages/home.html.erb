@@ -1,6 +1,9 @@
-<div class="landingbanner">
-<div class="landingcontainer">
 <div class="row">
+<br />
+<br />
+<br />
+<br />
+<br />
 <div class="landingbannercaption span8">
   <h1>Welcome to Crambox</h1>
   <br />
@@ -21,18 +24,17 @@
 
   <% if !current_user %>
     <div class="landingregistration pull-right">
-      <center><h3>Sign up now!</h3></center>
-      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <center><h3 id="signupheading">Sign up now!</h3></center>
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :class => "form-horizontal") do |f| %>
         <%= devise_error_messages! %>
-
-        <div><%= f.label :email %>
-        <%= f.email_field :email %></div>
-
-        <div><%= f.label :password %>
-        <%= f.password_field :password %></div>
-
-        <div><%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation %></div>
+        <%= f.email_field :email, :placeholder => "Email" %>
+        <br />
+        <br />
+        <%= f.password_field :password, :placeholder => "Password" %>
+        <br />
+        <br />
+        <%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
+        <br />
         <br />
         <%= f.submit "Sign up!", :class=> "btn btn-primary", id: "signupbutton" %>
       <% end %>
@@ -43,37 +45,10 @@
   <% end %>
 
 </div>
+<br />
+<br />
+<br />
+<br />
+<br />
+
 </div>
-</div>
-</div>
-<!-- Modal
-
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Sign up for Crambox!</h3>
-  </div>
-  <div class="modal-body">
-    <p>
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %>
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %>
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %></div>
-
-    </p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn pull-left" data-dismiss="modal" aria-hidden="true">Close</button>
-    <%= f.submit "Sign up", :class=> "btn btn-primary" %>
-    <% end %>
-
-  </div>
-</div>
--->

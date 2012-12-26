@@ -55,15 +55,19 @@
 	}
 
 .landingregistration {
-
+	text-shadow: 0 1px 3px rgba(139, 68, 68, .4), 0 0 30px rgba(0, 0, 0, .075);
 }
 
 .landingcontainer {
 	margin-right: auto;
 	margin-left: auto;
-	width: 1000px;
+	width: 960px;
+	color: white;
 }
 
+#frontcontainer {
+
+}
 
 .foundercaption {
 	color: white;
@@ -79,4 +83,16 @@
 
 #activelink {
 	border-top: 1px solid blue;
+}
+
+
+a {
+	color: white;
+}
+
+h2 {
+	font-family: 'Lobster', cursive;
+	font-size: 40px;
+
+	text-shadow: 0 1px 3px rgba(139, 68, 68, .4), 0 0 30px rgba(0, 0, 0, .075);	
 }

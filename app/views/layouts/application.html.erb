@@ -10,21 +10,25 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
+
+	<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
+	
 </head>
 <body>
 	
 	<%= render 'layouts/header' %>
 
-	<% flash.each do |key, value| %>
-	<div class="message">
-	   <div class="alert-message <%= key %> fade in">
-	    <a class="close" href="#">&times</a>
-	    <center><strong><%= value %></strong></center>
-	  </div>
-	</div>
-	<% end %>
 
-	<%= yield %>
+
+
+	<div class="landingbanner">
+		<div class="landingcontainer">
+			<%= render 'layouts/flash_messages' %>
+			<%= yield %>
+		</div>
+	</div>
+
 
 	<%= render 'layouts/footer' %>
 
