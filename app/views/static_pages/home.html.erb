@@ -1,42 +1,57 @@
-<div class="hero-unit">
-  <h1>Welcome to CampusLink</h1>
-  <p>Connecting you with other students on campus! </p>
+<div class="landingbanner">
+<div class="landingcontainer">
+<div class="row">
+<div class="landingbannercaption span8">
+  <h1>Welcome to Crambox</h1>
+  <br />
+  <p>Coming soon - connecting you with other students on campus! </p>
   <p>
-  	CampusLink is built to help you, a college student, to other students on campus. Finding a class difficult? Big test coming up and you have no idea how to study for it? CampusLink will match you up with people in your classes and let you get that A you crave.
-  	<br />
-  	<br />
-
-<!--
-    <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-large">Sign Up!</button>
--->
-
+    Crambox is being built to help college students discover and connect with other students on campus. Through Crambox you will be able to quickly form study groups, find tutors, or simply find people who are in your classes and are like you. 
   </p>
+  <br />
+  <div class="row">
+    <div class="span1">
+    <%= image_tag('uiuclogo.png', id: 'uiuclogo') %>
+    </div>
+    <div class="span7">
+    We currently only serve the <strong>University of Illinois at Urbana-Champaign</strong>, but are working to support as many schools as possible in the near future. <%= link_to "Let us know if you want your school next!", '/contact', id: 'contactlink' %>
+    </div>
+  </div>
+</div>
 
-<% if !current_user %>
-  <h3>Register now!</h3>
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+  <% if !current_user %>
+    <div class="landingregistration pull-right">
+      <center><h3>Sign up now!</h3></center>
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
-    <div><%= f.label :email %>
-    <%= f.email_field :email %></div>
+        <div><%= f.label :email %>
+        <%= f.email_field :email %></div>
 
-    <div><%= f.label :password %>
-    <%= f.password_field :password %></div>
+        <div><%= f.label :password %>
+        <%= f.password_field :password %></div>
 
-    <div><%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %></div>
-    <%= f.submit "Sign up!", :class=> "btn btn-primary" %>
+        <div><%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %></div>
+        <br />
+        <%= f.submit "Sign up!", :class=> "btn btn-primary", id: "signupbutton" %>
+      <% end %>
+    </div>
+
+  <% else %>
+    -signed in already, can't sign up- 
   <% end %>
-<% else %>
-  -signed in already, can't sign up- 
-<% end %>
 
+</div>
+</div>
+</div>
+</div>
 <!-- Modal
 
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Sign up for CampusLink!</h3>
+    <h3 id="myModalLabel">Sign up for Crambox!</h3>
   </div>
   <div class="modal-body">
     <p>

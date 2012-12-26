@@ -1,4 +1,4 @@
-CampusLink::Application.configure do
+Crambox::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -47,7 +47,7 @@ CampusLink::Application.configure do
       :port => 587,
       :domain => "localhost:3000",
       :authentication => :login,
-      :user_name => "campuslinkmail@gmail.com",
+      :user_name => "thecrambox@gmail.com",
       :password => "Demo1234"
     }
 

@@ -1,4 +1,4 @@
-CampusLink::Application.configure do
+Crambox::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -65,7 +65,7 @@ CampusLink::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.action_mailer.default_url_options = { :host => 'campuslink.heroku.com' }
+  config.action_mailer.default_url_options = { :host => 'thecrambox.com' }
 
 
   #Settings for the emailer
@@ -75,9 +75,9 @@ CampusLink::Application.configure do
       :enable_starttls_auto => true,
       :address => "smtp.gmail.com",
       :port => 587,
-      :domain => "campuslink.heroku.com",
+      :domain => "thecrambox.com",
       :authentication => :login,
-      :user_name => "campuslinkmail@gmail.com",
+      :user_name => "thecrambox@gmail.com",
       :password => "Demo1234"
     }
 

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-CampusLink::Application.load_tasks
+Crambox::Application.load_tasks

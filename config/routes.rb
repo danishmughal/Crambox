@@ -1,4 +1,4 @@
-CampusLink::Application.routes.draw do
+Crambox::Application.routes.draw do
 
   devise_for :users
 

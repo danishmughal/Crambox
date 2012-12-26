@@ -1,0 +1,78 @@
+.navbar .brand {
+	font-weight: bold;
+	font-size: 30px;
+	color: #5979CD;
+	font-family: 'Wendy One', sans-serif;
+	margin-top: 4px;
+}
+
+.navbar .navbar-inner {
+	height: 60px;
+
+}
+
+.navlinks {
+	margin-top: 10px;
+}
+
+.navlogin {
+	text-align: right;
+}
+
+
+.landingbanner {
+	background-color: #5979CD;
+	color: white;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 100px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+
+	h1 {
+	font-family: 'Lobster', cursive;
+	font-size: 60px;
+
+	text-shadow: 0 1px 3px rgba(139, 68, 68, .4), 0 0 30px rgba(0, 0, 0, .075);
+
+	}
+
+	#uiuclogo {
+	    width:50px; /* you can use % */
+	    height: auto;
+	}
+
+	#contactlink {
+		color: white;
+	}
+
+}
+
+	#signupbutton {
+		font-family: 'Open Sans', sans-serif;
+		width: 100%;
+		height: auto;
+	}
+
+.landingregistration {
+
+}
+
+.landingcontainer {
+	margin-right: auto;
+	margin-left: auto;
+	width: 1000px;
+}
+
+
+.foundercaption {
+	color: white;
+}
+
+.aboutcaption {
+	color: white;
+}
+
+#contactemail {
+	color: white;
+}
