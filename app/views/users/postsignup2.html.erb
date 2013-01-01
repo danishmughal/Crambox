@@ -1,0 +1,44 @@
+<% if !current_user.current_schedule? %>
+
+<h2>You're one step away from using Crambox!</h2>
+Just fill out the information below to get started. <br />
+In order to find people in your classes, you're going to have to tell us what classes you're in! <br /> <br />
+
+<div class="row">
+	<div class="span3">
+		Step 1
+	</div>
+	<div class="span3">
+		<strong id="stepindicator">Step 2</strong>
+	</div>
+	<div class="span3">
+		Step 3
+	</div>
+</div>
+
+<br />
+<br />
+
+
+
+Currently creating schedule for <strong><%= @semester %> <%= @year %>.</strong>
+
+<br />
+<br />
+
+<%= render :partial => 'enrolled_courses/createform', :locals => {:year => t(@year), :semester => t(@semester)} %>
+
+
+<br />
+<br />
+
+<div class="container">
+<a class="btn" href="/postsignup">Back</a>
+<a class="btn" href="/postsignup3">Continue.</a>
+</div>
+
+<% else %>
+	
+	You already have a schedule on this account for some reason.
+
+<% end %>

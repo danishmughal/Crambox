@@ -34,6 +34,7 @@ gem 'bootstrap-sass', '2.0.4'
 gem 'devise'
 
 gem 'annotate'
+gem 'nested_form'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

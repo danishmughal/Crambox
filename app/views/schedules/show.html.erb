@@ -1,0 +1,18 @@
+<p>
+	<h2><%= @schedule.semester %> <%= @schedule.year %></h2>
+	User: <%= @schedule.user.email %>
+</p>
+
+<br />
+<br />
+<h4>Classes:</h4>
+<br />
+<ol>
+  <% for enrolled_course in @schedule.enrolled_courses %>
+  <li><%= enrolled_course.subjectcode + " " %><%= enrolled_course.classcode %></li>
+  <% end %>
+</ol>
+
+<p>
+  <%= link_to "Delete this Schedule", @schedule, :confirm => 'Are you sure?', :method => :delete %> |
+</p>

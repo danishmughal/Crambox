@@ -1,0 +1,17 @@
+
+<div class="row">
+	<div class="span3">
+		<%= form_for :enrolled_course, :url => url_for(:controller => 'enrolled_courses', :action => 'initialsetup') do |f| %>
+		Subject Code: <%= f.text_field :subjectcode, :class => "addclassfield" %> </div>
+		  <div class="span3">Classcode: <%= f.text_field :classcode, :class => "addclassfield" %> </div>
+		  <div class="span3">Schedule ID: <%= f.text_field :schedule_id, :class => "addclassfield" %> </div>
+	</div>
+
+	<div class="pull-right">		 
+	 <%= hidden_field_tag 'year', @year %>
+	 <%= hidden_field_tag 'semester', @semester %>
+	 <%= f.submit "Create" %>
+	<% end %>
+	</div>
+
+</div>

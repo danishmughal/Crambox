@@ -13,7 +13,13 @@
 class Schedule < ActiveRecord::Base
   # attr_accessible :title, :body
 
-  has_many :enrolled_courses
+  has_many :enrolled_courses, :dependent => :destroy 
+  accepts_nested_attributes_for :enrolled_courses, :reject_if => :all_blank
+
+  validates_associated :enrolled_courses
+
   belongs_to :user
-  attr_accessible :user_id, :semester, :year
+
+
+  attr_accessible :user_id, :semester, :year, :enrolled_courses_attributes
 end

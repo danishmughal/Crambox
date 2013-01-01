@@ -1,11 +1,58 @@
-<h2>You're one step away from using CampusLink!</h2>
+<% if !current_user.current_schedule? %>
+
+<h2>You're one step away from using Crambox!</h2>
 Just fill out the information below to get started. <br />
 In order to find people in your classes, you're going to have to tell us what classes you're in! <br /> <br />
 
-<% if !current_user.current_schedule? %>
+
+<div class="row">
+	<div class="span3">
+		<strong id="stepindicator">Step 1</strong>
+	</div>
+	<div class="span3">
+		Step 2
+	</div>
+	<div class="span3">
+		Step 3
+	</div>
+</div>
+
+<br />
+<br />
 
 	Now you have to create your schedule!
 	Type in the classes that you are currently taking right now. If it's winter break, type in the classes that you will be taking next semester! 
+
+<br />
+<br />
+
+<% form_for :schedule, :url => url_for(:controller => 'schedules', :action => 'new')  do |f| %>
+  <p>
+    <%= f.label "Year" %>
+    <%= f.text_field :year %><br />
+    <%= f.label "Semester" %>
+    <%= f.text_field :semester %>
+  </p>
+  <% f.fields_for :enrolled_courses do |builder| %>
+  <p>
+    <%= builder.label :subjectcode, "Subject Code" %><br />
+    <%= builder.text_area :subjectcode, :rows => 3 %>
+
+    <%= builder.label :classcode, "Class code" %><br />
+    <%= builder.text_area :classcode, :rows => 3 %>
+  </p>
+  <% end %>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
+
+<!--
+<%= form_for :user, :url => url_for(:controller => 'users', :action => 'postsignup2') do |f| %>
+ <%= hidden_field_tag 'year', '2013' %>
+ <%= hidden_field_tag 'semester', 'spring' %>
+
+ <%= f.submit "Next" %>
+<% end %>
+-->
 
 <% else %>
 	

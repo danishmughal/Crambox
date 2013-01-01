@@ -13,6 +13,8 @@
               <li><%= link_to "Home",    '/' %></li>
             <% end %>
             
+
+        <% if !current_user %>
             <% if request.path == '/about' %>
               <li id="activelink"><%= link_to "About",    '/about' %></li>
             <% else %>
@@ -24,6 +26,10 @@
             <% else %>
               <li><%= link_to "Contact", '/contact' %></li>
             <% end %>
+
+        <% end %>
+
+        
           </ul>
         </div>
       </nav>

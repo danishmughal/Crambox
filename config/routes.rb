@@ -2,11 +2,21 @@ Crambox::Application.routes.draw do
 
   devise_for :users
 
+  resources :enrolled_courses
+  resources :schedules
+
   root to: 'static_pages#home'
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
 
   match '/postsignup', to:'users#postsignup'
+  match '/postsignup2', to: 'users#postsignup2'
+
+
+  match '/enrolled_courses/new', to: 'enrolled_courses#new'
+  match '/enrolled_courses/initialsetup', to: 'enrolled_courses#initialsetup'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,45 @@
+<% if !current_user.set_up? %>
+
+<h2>You're one step away from using Crambox!</h2>
+Just fill out the information below to get started. <br />
+In order to find people in your classes, you're going to have to tell us what classes you're in! <br /> <br />
+
+<%= nested_form_for @schedule do |f| %>
+  <p>
+  	<h3>Schedule info:</h2>
+    <%= f.label "Year" %>
+    <%= f.text_field :year %><br />
+    <%= f.label "Semester" %>
+    <%= f.text_field :semester %>
+  </p>
+  <br />
+	  <h3>Classes:</h3>
+	  <%= f.fields_for :enrolled_courses do |builder| %>
+	  <p>
+	  	<div class="row">
+	  		<div class="span3"><%= builder.label :subjectcode, "Subject Code" %>
+	      <%= builder.text_field :subjectcode, :class => "addclassfield", :rows => 3 %></div>
+	     	<div class="span3"><%= builder.label :classcode, "Class code" %>
+	    	<%= builder.text_field :classcode, :class => "addclassfield", :rows => 3 %></div>
+	    	<div class="span3">
+	    	 <%= hidden_field_tag 'user_id', current_user.id %>
+	    	  <%= builder.link_to_remove "Remove", :class => "btn btn-mini removeclassbutton" %>
+	    	</div>
+	    </div>
+	  </p>
+	  <% end %>
+  <%= f.link_to_add "Add Class", :enrolled_courses, :class => "btn" %>
+
+  <br />
+  <br />
+  <br />
+
+  <p><%= f.submit "Submit!", :class => "btn btn-primary btn-large"%></p>
+<% end %>
+
+
+<% else %>
+
+You are already setup. This page coming soon.
+
+<% end %>
