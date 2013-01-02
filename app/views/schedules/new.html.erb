@@ -4,13 +4,21 @@
 Just fill out the information below to get started. <br />
 In order to find people in your classes, you're going to have to tell us what classes you're in! <br /> <br />
 
+
+
 <%= nested_form_for @schedule do |f| %>
   <p>
   	<h3>Schedule info:</h2>
-    <%= f.label "Year" %>
-    <%= f.text_field :year %><br />
-    <%= f.label "Semester" %>
-    <%= f.text_field :semester %>
+  		<div class="row">
+  			<div class="span3">
+  				<%= f.label "Year" %>
+    			<%= f.select(:year, options_for_select(@yearlist)) %><br />
+  			</div>
+  			<div class="span3">
+  				<%= f.label "Semester" %>
+    			<%= f.select(:semester, options_for_select(@semesterlist)) %>
+  			</div>
+  		</div>
   </p>
   <br />
 	  <h3>Classes:</h3>
@@ -18,8 +26,8 @@ In order to find people in your classes, you're going to have to tell us what cl
 	  <p>
 	  	<div class="row">
 	  		<div class="span3"><%= builder.label :subjectcode, "Subject Code" %>
-	      <%= builder.text_field :subjectcode, :class => "addclassfield", :rows => 3 %></div>
-	     	<div class="span3"><%= builder.label :classcode, "Class code" %>
+	      <%= builder.select(:subjectcode, options_for_select(@subjectlist), :class => "addclassfield", :rows => 3, :prompt => "Subject Code" ) %></div>
+	     	<div class="span3"><%= builder.label :classcode, "Class code (e.g. 225)" %>
 	    	<%= builder.text_field :classcode, :class => "addclassfield", :rows => 3 %></div>
 	    	<div class="span3">
 	    	 <%= hidden_field_tag 'user_id', current_user.id %>

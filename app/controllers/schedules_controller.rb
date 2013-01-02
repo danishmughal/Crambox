@@ -1,7 +1,35 @@
 class SchedulesController < ApplicationController
+	require 'nokogiri'
+	require 'open-uri'
+
 	def new
 		@schedule = Schedule.new
 		2.times { @schedule.enrolled_courses.build }
+
+
+		#Creates the @yearlist array to populate the year dropdown.
+		@yeardoc = Nokogiri::XML(open("http://courses-test.illinois.edu/cisapp/explorer/catalog.xml"))
+		years = @yeardoc.xpath("//calendarYear/text()")
+		@yearlist = Array.new
+		years.each do |output|
+			@yearlist.push output
+		end
+
+		#Creates the @semesterlist array to populate the semester dropdown
+		@semesterlist = Array.new
+		@semesterlist.push "Spring"
+		@semesterlist.push "Fall"
+		@semesterlist.push "Summer"
+
+		#Creates the @subjectlist
+		@subjectdoc = Nokogiri::XML(open("http://courses-test.illinois.edu/cisapp/explorer/catalog/2013/spring.xml"))
+		subjects = @subjectdoc.xpath("//subject/@id")
+		@subjectlist = Array.new
+		subjects.each do |output|
+			@subjectlist.push output
+		end
+
+
 	end
 
 	def create
@@ -18,6 +46,7 @@ class SchedulesController < ApplicationController
 			user = User.find(current_user.id)
 			user.set_up = true
 			user.save
+			redirect_to root
 		else
 			flash[:success] = "#{year} + #{semester} + #{user_id} Schedule created"
 			redirect_to @schedule
