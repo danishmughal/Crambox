@@ -21,7 +21,8 @@
 
 
 .landingbanner {
-	background-color: #5979CD;
+	background-image: url(debut_dark.png);
+	background-repeat: repeat;
 	color: white;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -109,4 +110,8 @@ h2 {
 
 .removeclassbutton {
 	margin-top: 27px;
+}
+
+.navbox {
+	text-align: center;
 }
