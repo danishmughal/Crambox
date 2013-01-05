@@ -7,17 +7,26 @@
 <div class="landingbannercaption span8">
   <h1>Welcome to Crambox</h1>
   <br />
-  <p>Coming soon - connecting you with other students on campus! </p>
+  <p>Coming soon - connecting you with people in your classes! </p>
   <p>
-    Crambox is being built to help college students discover and connect with other students on campus. Through Crambox you will be able to quickly form study groups, find tutors, or simply find people who are in your classes and are like you. 
+    <ul>
+      <li>Discover and connect with other students on campus</li>
+      <li>Create and find study groups</li>
+      <li>Find tutors</li>
+      <li>Make brand new connections!</li>
+    </ul>
   </p>
   <br />
   <div class="row">
+    <!--
     <div class="span1">
     <%= image_tag('uiuclogo.png', id: 'uiuclogo') %>
     </div>
+  -->
     <div class="span7">
-    We currently only serve the <strong>University of Illinois at Urbana-Champaign</strong>, and so can only accept <strong>@illinois.edu</strong> or <strong>@uiuc.edu</strong> accounts, but are working to support as many schools as possible in the near future. <%= link_to "Let us know if you want your school next!", '/contact', id: 'contactlink' %>
+    We currently only serve the <strong>University of Illinois at Urbana-Champaign</strong>, and so can only accept <strong>@illinois.edu</strong> or <strong>@uiuc.edu</strong> accounts, but are working to support as many schools as possible in the near future. <br />
+    <br />
+    <%= link_to "Let us know if you want your school next!", '/contact', id: 'contactlink' %>
     </div>
   </div>
 </div>

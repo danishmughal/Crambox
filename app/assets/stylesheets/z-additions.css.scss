@@ -27,6 +27,7 @@
 	padding-top: 30px;
 	padding-bottom: 30px;
 	margin-bottom: 20px;
+	margin-top: -20px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 
@@ -45,6 +46,7 @@
 
 	#contactlink {
 		color: white;
+		text-decoration: underline;
 	}
 
 }
@@ -120,4 +122,13 @@ body {
 	background-image: url(cardboard_flat.png);
 	background-repeat: repeat;
 
+}
+
+
+.footer {
+	color: gray;
+
+	a {
+		color: gray;
+	}
 }

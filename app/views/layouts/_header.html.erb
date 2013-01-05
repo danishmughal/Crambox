@@ -1,3 +1,4 @@
+<div id="navbar-top">
 <header class="navbar">
   <div class="navbar-inner">
     <div class="container-fluid">
@@ -8,7 +9,12 @@
 
 
             <% if request.path == '/' %>
-              <li id="activelink"><%= link_to "Home",    '/' %></li>
+            
+              <% if !current_user %>
+                <li id="activelink"><%= link_to "Home",    '/' %></li>
+              <% else %>
+                <li id="activelink"><%= link_to "Launchpad",    '/' %></li>
+              <% end %>
             <% else %>
               <li><%= link_to "Home",    '/' %></li>
             <% end %>
@@ -26,6 +32,20 @@
             <% else %>
               <li><%= link_to "Contact", '/contact' %></li>
             <% end %>
+
+        <% else %>
+            <% if request.path == '/friends' %>
+              <li id="activelink"><%= link_to "Friends",    '/friends' %></li>
+            <% else %>
+              <li><%= link_to "Friends",    '/friends' %></li>
+            <% end %>
+
+            <% if request.path == '/groups' %>
+              <li id="activelink"><%= link_to "Groups", '/groups' %></li>
+            <% else %>
+              <li><%= link_to "Groups", '/groups' %></li>
+            <% end %>
+
 
         <% end %>
 
@@ -59,3 +79,4 @@
     </div>
   </div>
 </header>
+</div>
