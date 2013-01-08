@@ -1,0 +1,25 @@
+<div class="row">
+<div class="landingbannercaption">
+
+  <div class="page-header">
+    <h1>Sign up</h1>
+  </div>
+
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :class => "form-horizontal") do |f| %>
+  <%= devise_error_messages! %>
+  <div><%= f.label :name, "Full Name" %>
+  <%= f.text_field :name %></div><br />
+
+
+  <div><%= f.label :email, "University Email: (*.edu)" %>
+  <%= f.email_field :email %></div><br />
+
+  <div><%= f.label :password %>
+  <%= f.password_field :password %></div><br />
+
+  <div><%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %></div><br />
+
+  <%= f.submit "Sign up!", :class=> "btn btn-primary" %>
+<% end %>

@@ -38,7 +38,13 @@ gem 'nested_form'
 
 gem 'nokogiri'
 
-# To use ActiveModel has_secure_password
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+gem 'font-awesome-rails'
+
+#  use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON

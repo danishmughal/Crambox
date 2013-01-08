@@ -1,6 +1,8 @@
 Crambox::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, 
+             :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+             #the omniauth code tells devise in which controller we implement devise callbacks
 
   resources :enrolled_courses
   resources :schedules
@@ -16,6 +18,7 @@ Crambox::Application.routes.draw do
   match '/enrolled_courses/new', to: 'enrolled_courses#new'
   match '/enrolled_courses/initialsetup', to: 'enrolled_courses#initialsetup'
 
+  match '/users/sign_up_nofb', to: 'users#sign_up_nofb'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

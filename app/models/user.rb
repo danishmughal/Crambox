@@ -21,6 +21,9 @@
 #  unconfirmed_email      :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  provider               :string(255)
+#  uid                    :string(255)
+#  name                   :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -31,11 +34,31 @@ class User < ActiveRecord::Base
   has_one :schedule
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable,
+         :omniauthable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, 
-  				  :first_name, :last_name, :set_up
+  				  :set_up, :provider, :uid, :name, :image
   #:set_up added to determine whether account has set up post-registration info or not
   # attr_accessible :title, :body
+
+
+  #User for oauth/devise
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create(name:auth.extra.raw_info.name,
+                         provider:auth.provider,
+                         uid:auth.uid,
+                         email:auth.info.email,
+                         password:Devise.friendly_token[0,20]
+                         )
+    end
+    user
+  end
+
+
+
+
 end

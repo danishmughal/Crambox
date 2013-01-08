@@ -9,7 +9,26 @@
 
 	<%= devise_error_messages! %>
 
-	  <div><%= f.label :email %><br />
+	<% @fullname = session["devise.facebook_data"].extra.raw_info.name %>
+	<% @fbuid = session["devise.facebook_data"].uid %>
+	<% @profilepic = session["devise.facebook_data"].info.image %>
+
+
+	Creating Account For: <br /><br />
+	<img src=<%= @profilepic %>></img>
+	<strong><%= @fullname %></strong>
+
+	<br />
+	<br />
+	<br />
+	<br />
+
+
+	  <div><%= f.label :name, "Full Name" %><br />
+	  <%= f.text_field :name, :value => @fullname %></div>
+
+
+	  <div><%= f.label :email, "University Email: (*.edu)" %><br />
 	  <%= f.email_field :email %></div>
 
 	  <div><%= f.label :password %><br />
@@ -17,6 +36,10 @@
 
 	  <div><%= f.label :password_confirmation %><br />
 	  <%= f.password_field :password_confirmation %></div>
+
+	  <%= f.hidden_field :uid, :value => @fbuid %>
+	  <%= f.hidden_field :provider, :value => 'facebook' %>
+	  <%= f.hidden_field :image, :value => @profilepic %>
 
 	  <div><%= f.submit "Sign up", :class => "btn btn-primary" %></div>
 	<% end %>

@@ -2,7 +2,7 @@
 	font-weight: bold;
 	font-size: 30px;
 	color: #5979CD;
-	font-family: 'Wendy One', sans-serif;
+	font-family: 'Lobster', sans-serif;
 	margin-top: 4px;
 }
 
@@ -128,7 +128,55 @@ body {
 .footer {
 	color: gray;
 
-	a {
+	 a {
 		color: gray;
 	}
+}
+
+
+/*The picture that appears in the header bar. It's picked from the database */
+#headerprofilepic {
+	height: 40px;
+	width: auto;
+}
+
+
+/*The text that appears on the splash page to let the user sign up without using their facebook account. 
+Appears under the large sign up with facebook button*/
+#signupnofacebook {
+	margin-top: 140px;
+
+	a {
+		color: gray;
+
+	}
+
+	a:hover {
+		color: white;
+		text-decoration: none;
+	}
+}
+
+/*Login with facebook image in the header in the login form 
+-->Useless because no longer using image. Delete if needed.
+#fbloginheader {
+	width: auto;
+	height: 25px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+*/
+
+/*Main large image on page body*/
+#fbsignupicon {
+	font-size: 30px;
+	margin-top: auto;
+	margin-bottom: 15px;
+}
+
+
+/*Login icon at the header */
+#fbloginicon {
+	font-size: 20px;
+	margin-bottom: 5px;
 }

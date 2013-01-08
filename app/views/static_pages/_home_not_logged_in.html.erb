@@ -5,7 +5,7 @@
 <br />
 <br />
 <div class="landingbannercaption span8">
-  <h1>Welcome to Crambox</h1>
+  <h1>Crambox</h1>
   <br />
   <p>Coming soon - connecting you with people in your classes! </p>
   <p>
@@ -33,10 +33,27 @@
 
   <% if !current_user %>
     <div class="landingregistration pull-right">
-      <center><h3 id="signupheading">Sign up now!</h3></center>
+      <br />     
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-large btn-primary" do %>
+        <i id="fbsignupicon" class="icon-facebook"></i>&nbsp;&nbsp;&nbsp;Sign up now with Facebook
+      <% end %>
+      <br />
+      <div id="signupnofacebook" class="pull-right">
+        <a href="/users/sign_up_nofb">Or, signup without facebook <i class="icon-arrow-right"></i></a>
+      </div>
+
+      <!--
       <br />
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :class => "form-horizontal") do |f| %>
         <%= devise_error_messages! %>
+        <%= f.text_field :name, :placeholder => "Full Name" %>
+        <br />
+        <br />
         <%= f.email_field :email, :placeholder => "Email" %>
         <br />
         <br />
@@ -48,13 +65,20 @@
         <br />
         <%= f.submit "Sign up!", :class=> "btn btn-primary", id: "signupbutton" %>
       <% end %>
+      -->
     </div>
+
 
   <% else %>
     -signed in already, can't sign up- 
   <% end %>
 
+
+
 </div>
+
+
+
 <br />
 <br />
 <br />

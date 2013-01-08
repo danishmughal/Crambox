@@ -3,14 +3,10 @@ class UsersController < ApplicationController
 		if current_user.set_up?
 			redirect_to '/'
 		end
-
-		
 	end
 
 	def postsignup2 
 		@year = params[:year]
-		@semester = params[:semester]
-
-		
+		@semester = params[:semester]		
 	end
 end

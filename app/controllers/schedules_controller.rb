@@ -46,7 +46,7 @@ class SchedulesController < ApplicationController
 			user = User.find(current_user.id)
 			user.set_up = true
 			user.save
-			redirect_to root
+			redirect_to '/'
 		else
 			flash[:success] = "#{year} + #{semester} + #{user_id} Schedule created"
 			redirect_to @schedule
