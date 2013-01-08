@@ -6,6 +6,8 @@ Crambox::Application.routes.draw do
 
   resources :enrolled_courses
   resources :schedules
+  resources :friendships
+  resources :users
 
   root to: 'static_pages#home'
   match '/about', to: 'static_pages#about'
@@ -20,6 +22,7 @@ Crambox::Application.routes.draw do
 
   match '/users/sign_up_nofb', to: 'users#sign_up_nofb'
 
+  match '/friends', to: 'friendships#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

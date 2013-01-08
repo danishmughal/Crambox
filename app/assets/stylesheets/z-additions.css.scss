@@ -180,3 +180,56 @@ Appears under the large sign up with facebook button*/
 	font-size: 20px;
 	margin-bottom: 5px;
 }
+
+
+/* Styling for the profile page */
+#profilename {
+	margin-top: 50px;
+	padding-top: 90px;
+	font-size: 60px;
+
+
+}
+
+#mainprofilepic {
+	margin-top: 50px;
+	height: 200px;
+	width: auto;
+}
+
+#profileschedule {
+	margin-top: 40px;
+	margin-bottom: 50px;
+	height: 200px;
+	background-image: url(otis_redding.png);
+	background-repeat: repeat;
+	border-radius: 10px;
+
+	padding-left: 20px;
+	padding-top: 10px;
+
+
+
+	h1 {
+		font-size: 25px;
+		font-family: 'Open Sans', sans-serif;
+	}
+}
+
+#profileinfo {
+	margin-top: 40px;
+	margin-bottom: 50px;
+	height: 200px;
+	background-image: url(otis_redding.png);
+	background-repeat: repeat;
+	border-radius: 10px;
+
+	padding-left: 20px;
+	padding-top: 10px;
+
+	h1 {
+		font-size: 25px;
+		font-family: 'Open Sans', sans-serif;
+	}
+
+}

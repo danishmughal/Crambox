@@ -24,6 +24,7 @@
 #  provider               :string(255)
 #  uid                    :string(255)
 #  name                   :string(255)
+#  image                  :string(255)
 #
 
 require 'test_helper'

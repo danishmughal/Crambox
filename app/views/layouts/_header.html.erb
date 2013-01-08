@@ -33,7 +33,7 @@
               <li><%= link_to "Contact", '/contact' %></li>
             <% end %>
 
-        <% else %>
+        <% elsif current_user.set_up? %>
             <% if request.path == '/friends' %>
               <li id="activelink"><%= link_to "Friends",    '/friends' %></li>
             <% else %>
@@ -63,7 +63,7 @@
               <% else %>
                 <li><img id="headerprofilepic" src=<%= current_user.image %>></img></li>
               <% end %>
-              <li><%= link_to current_user.name %></li>
+              <li><%= link_to current_user.name, current_user %></li>
               <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
             </ul>
 

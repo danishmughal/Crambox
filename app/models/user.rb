@@ -24,6 +24,7 @@
 #  provider               :string(255)
 #  uid                    :string(255)
 #  name                   :string(255)
+#  image                  :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -32,6 +33,9 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
 
   has_one :schedule
+
+  has_many :friendships, :foreign_key => :user_id
+  has_many :friends, :through => :friendships, :class_name => "User"
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable,

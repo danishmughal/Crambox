@@ -9,4 +9,11 @@ class UsersController < ApplicationController
 		@year = params[:year]
 		@semester = params[:semester]		
 	end
+
+	def show
+		@user = User.find(params[:id])
+		@image = @user.image.sub 'square', 'large'
+		@schedule = Schedule.where("user_id = ?", @user.id).first
+		@classes = EnrolledCourse.where("schedule_id = ?", @schedule.id)
+	end
 end

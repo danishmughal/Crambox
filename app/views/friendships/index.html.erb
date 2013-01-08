@@ -1,0 +1,9 @@
+Here are all of your friends:
+
+<% if @friendships %>
+	<% @friendships.each do |friendship| %>
+		<br />
+		<%= friendship.user_2.name %>
+		<br />
+	<% end %>
+<% end %>
