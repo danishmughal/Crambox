@@ -20,7 +20,7 @@ Crambox::Application.routes.draw do
   match '/enrolled_courses/new', to: 'enrolled_courses#new'
   match '/enrolled_courses/initialsetup', to: 'enrolled_courses#initialsetup'
 
-  match '/users/sign_up_nofb', to: 'users#sign_up_nofb'
+  match '/sign_up_nofb', to: 'users#sign_up_nofb'
 
   match '/friends', to: 'friendships#index'
   # The priority is based upon order of creation:
