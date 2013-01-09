@@ -1,5 +1,5 @@
 <div id="navbar-top">
-<header class="navbar">
+<header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container-fluid">
       <a class="brand" href="/">Crambox</a>
@@ -58,7 +58,7 @@
 
 
             <ul class="nav pull-right">
-              <% if current_user.uid.nil? %>
+              <% if current_user.image.nil? %>
                 <li><%= image_tag("default_user.png", :id => "headerprofilepic")%></li>
               <% else %>
                 <li><img id="headerprofilepic" src=<%= current_user.image %>></img></li>
@@ -72,15 +72,16 @@
 
           <div class="navlogin pull-right">
             <%= form_for("user", :url => user_session_path, :html => { :class => "navbar-form"}) do |f| %>
-              <%= f.text_field :email, :placeholder => "Email" %>
-              <%= f.password_field :password, :placeholder => "Password" %>
+              <%= f.text_field :email, :placeholder => "Email", :class=> "span2" %>
+              <%= f.password_field :password, :placeholder => "Password", :class => "span2" %>
               <%= f.submit 'Login', :class => "btn-mini btn" %>
               <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary" do %>
                 <i id="fbloginicon" class="icon-facebook"> </i> Login
               <% end %>
-
             <% end %>
           </div>
+
+
           <% end %>
 
       </nav>

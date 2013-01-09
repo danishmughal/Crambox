@@ -4,7 +4,7 @@ class SchedulesController < ApplicationController
 
 	def new
 		@schedule = Schedule.new
-		2.times { @schedule.enrolled_courses.build }
+		4.times { @schedule.enrolled_courses.build }
 
 
 		#Creates the @yearlist array to populate the year dropdown.

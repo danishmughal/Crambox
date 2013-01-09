@@ -2,7 +2,7 @@
 	font-weight: bold;
 	font-size: 30px;
 	color: #5979CD;
-	font-family: 'Lobster', sans-serif;
+	font-family: 'Allan', cursive;
 	margin-top: 4px;
 }
 
@@ -27,14 +27,20 @@
 	padding-top: 30px;
 	padding-bottom: 30px;
 	margin-bottom: 20px;
-	margin-top: -20px;
+	/*margin-top: -20px;*/
+	margin-top: 50px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 
 	h1 {
-	font-family: 'Lobster', cursive;
-	font-size: 60px;
+	font-family: 'Allan', cursive;
+	font-size: 80px;
+	text-shadow: 0 1px 3px rgba(139, 68, 68, .4), 0 0 30px rgba(0, 0, 0, .075);
+	}
 
+	#landinglogo {
+	font-family: 'Allan', cursive;
+	font-size: 120px;
 	text-shadow: 0 1px 3px rgba(139, 68, 68, .4), 0 0 30px rgba(0, 0, 0, .075);
 
 	}
@@ -94,7 +100,7 @@ a {
 }
 
 h2 {
-	font-family: 'Lobster', cursive;
+	font-family: 'Allan', cursive;
 	font-size: 40px;
 
 	text-shadow: 0 1px 3px rgba(139, 68, 68, .4), 0 0 30px rgba(0, 0, 0, .075);	
@@ -114,9 +120,6 @@ h2 {
 	margin-top: 27px;
 }
 
-.navbox {
-	text-align: center;
-}
 
 body {
 	background-image: url(cardboard_flat.png);
@@ -186,8 +189,11 @@ Appears under the large sign up with facebook button*/
 #profilename {
 	margin-top: 50px;
 	padding-top: 90px;
-	font-size: 60px;
+	padding-left: 40px;
 
+	font-family: 'Allan';
+	font-size: 80px;
+	text-shadow: 0 1px 3px rgba(139, 68, 68, .4), 0 0 30px rgba(0, 0, 0, .075);
 
 }
 
@@ -211,8 +217,9 @@ Appears under the large sign up with facebook button*/
 
 
 	h1 {
-		font-size: 25px;
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Allan';
+		font-size: 40px;
+		text-shadow: 0 1px 3px rgba(139, 68, 68, .4), 0 0 30px rgba(0, 0, 0, .075);
 	}
 }
 
@@ -228,8 +235,59 @@ Appears under the large sign up with facebook button*/
 	padding-top: 10px;
 
 	h1 {
-		font-size: 25px;
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Allan';
+		font-size: 40px;
+		text-shadow: 0 1px 3px rgba(139, 68, 68, .4), 0 0 30px rgba(0, 0, 0, .075);
 	}
 
+}
+
+
+#mainnav {
+	margin-top: 50px;
+}
+
+
+#navicon {
+	font-size: 80px;
+	padding-top: 30px;
+	padding-right: 50px;
+}
+
+#naviconbolt {
+	font-size: 80px;
+	padding-top: 30px;
+	padding-right: 20px;
+}
+
+.navbox {
+	text-align: center;
+	height: 130px;
+	padding-right: auto;
+	padding-left: auto;
+
+	a {
+		color:white;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: gray;
+		transition-duration: 5s;
+
+	}
+}
+
+.navboxtext {
+	a {
+		color:white;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: gray;
+
+	}
+
+	text-align: center;
 }
