@@ -3,11 +3,15 @@ cardboard_flat.png: cardboard_flat-66756881295c50d70500c521aa14ea42.png
 debut_dark.png: debut_dark-6e673e6a177844d9dcd8d79c2af7273d.png
 default_user.png: default_user-d56e9729c08bbf05e4a06c60d47c4067.png
 fblogin.png: fblogin-4309a7df298a2d56680e15cbe68252e1.png
+icons/bolt.png: icons/bolt-91336b5adceb2d56da1cad41985c3825.png
+icons/comments-alt.png: icons/comments-alt-50ca428f94835d00b09ffa2e6b76e43f.png
+icons/group.png: icons/group-739ff34c4268909f96155560f417f369.png
+icons/share.png: icons/share-5af2ff13bf83fc36abe190ec804b2da2.png
 otis_redding.png: otis_redding-43d27ab0306e0d738671da2082340a1c.png
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
 uiuclogo.png: uiuclogo-9dbca937f61f3439293c6e47e7f85b27.png
 application.js: application-add70f467f807a3120e59e67dda18ab8.js
-application.css: application-af3da5e398a5852d852db61ae74450fa.css
+application.css: application-2a58110ad6782102bde11bf3e2e41e05.css
 fontawesome-webfont.eot: fontawesome-webfont-7cf1b0de49e2f8672c9ad6d9e382115f.eot
 fontawesome-webfont.svg: fontawesome-webfont-4d19fdd70a080778557b652cb4868557.svg
 fontawesome-webfont.ttf: fontawesome-webfont-1e29be0bb354c9f664cbca7df9a966d8.ttf
