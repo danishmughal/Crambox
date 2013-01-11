@@ -1,6 +1,10 @@
 <div class="row">
 	<div class="span4">
-    <img id="mainprofilepic" src=<%= @image %>>
+		<% if @user.image %>
+		    <img id="mainprofilepic" src=<%= @image %>>
+    	<% else %>
+	        <%= image_tag("default_user.png", :id => "schedulematchpic")%>
+       	<% end %>
   	</img>
   </div>
 

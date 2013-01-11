@@ -291,3 +291,60 @@ Appears under the large sign up with facebook button*/
 
 	text-align: center;
 }
+
+
+
+
+
+#schedulematchpic {
+	padding-top: 15px;
+	height: 120px;
+	width: auto;
+}
+
+#schedulematchperson {
+	-webkit-transition:border 0.5s ease-in;  
+
+	height: 150px;
+	border: 1px solid gray;
+	margin-bottom: 20px;
+
+	text-align: center;
+
+	.fraction {
+		padding-top: 55px;
+		text-align: center;
+		font-size: 50px;
+		color: #5979CD;
+		font-weight: bold;
+		margin-bottom: 15px;
+
+
+	}
+
+	.text {
+
+	}
+
+	.name {
+		padding-top: 15px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.connectbutton {
+	    padding-top: 60px;
+	}
+
+	.picture {
+	}
+
+	.classes {
+		padding-top: 15px;
+	}
+}
+
+div#schedulematchperson:hover {
+	border: 1px solid white;
+
+}

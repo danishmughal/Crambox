@@ -1,0 +1,58 @@
+<h2>ScheduleMatch</h2>
+
+Your classes: 
+<% @userclasses.each do |c| %>
+	<%= c %>
+<% end %>
+
+<br />
+<br />
+
+Below are the users that match your schedule! Feel free to connect with them.
+
+<br />
+<br />
+
+<% @matchingusers.each do |m| %>
+	<div id="schedulematchperson">
+		<div class="row">
+			<div class="span2">
+				<% if m.image %>
+					<% @image = m.image.sub 'square', 'large' %>
+			    	<%= link_to(image_tag(@image, :id => "schedulematchpic"), m) %>
+			    <% else %>
+			        <%= link_to(image_tag("default_user.png", :id => "schedulematchpic"), m)%>
+			    <% end %>
+			</div>
+
+			<div class="span3">
+				<div class="name pull-left"><%= link_to(m.name, m) %></div>
+			</div>
+
+			<div class="span2">
+				<div class="classes">
+					<% if @matchclass[m.id].kind_of?(Array) %>
+						<% @matchclass[m.id].each do |z| %>
+							<li><%= z %></li>
+						<% end %>
+					<% else %>
+						<li><%= @matchclass[m.id] %></li>
+					<% end %>
+				</div>
+
+			</div>
+
+			<div class="span3">
+				<div class="fraction"><%= @match[m.id] %>/<%= @classes.size %></div>
+				<div class="text">classes in common</div>
+			</div>
+
+			<div class="span2">
+				<div class="connectbutton"><a class="btn" href="#">Connect</a></div>
+			</div>
+		</div>
+	</div>
+<% end %>
+
+
+

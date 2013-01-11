@@ -16,6 +16,8 @@ Crambox::Application.routes.draw do
   match '/postsignup', to:'users#postsignup'
   match '/postsignup2', to: 'users#postsignup2'
 
+  match '/schedulematch', to: 'users#schedulematch'
+
 
   match '/enrolled_courses/new', to: 'enrolled_courses#new'
   match '/enrolled_courses/initialsetup', to: 'enrolled_courses#initialsetup'
@@ -23,6 +25,8 @@ Crambox::Application.routes.draw do
   match '/sign_up_nofb', to: 'users#sign_up_nofb'
 
   match '/friends', to: 'friendships#index'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

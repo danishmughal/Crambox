@@ -234,7 +234,7 @@ Devise.setup do |config|
 
   #Custom Additions (facebook auth)
   require "omniauth-facebook"
-  config.omniauth :facebook, "584996938192451", "c8f796ca7c651225632bb8cd953d1c4a", 
+  config.omniauth :facebook, "444527848934518", "ac994bbf46506bcc21838a40cf1479f6", 
     :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
 
 
